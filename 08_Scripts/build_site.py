@@ -5,6 +5,8 @@ import json
 import os
 from common import *
 import resources as R
+import questions as Q
+import syllabus as SY
 
 VIDEOS = {}
 _vp = os.path.join(os.path.dirname(os.path.abspath(__file__)), "videos.json")
@@ -66,6 +68,8 @@ def main():
                 if yt:
                     item["yt"] = yt
                 item["h"], item["dn"] = how_for(t, blk)
+                if t["block"] in Q.QS:
+                    item["qs"] = [[a, b] for a, b in Q.QS[t["block"]]]
                 vids = [v for v in VIDEOS.get(t["block"], []) if not any(x in v["t"].lower() for x in BANV.get(t["block"], []) + GBAN)]
                 if vids:
                     item["vd"] = [[v["id"], v["t"], v["ch"], v["d"]] for v in vids]
@@ -79,7 +83,7 @@ def main():
     evals = [dict(id=e["id"], c=e["course"], t=e["title"], d=e["date"], e=e["end"], tm=e.get("time"), s=e["status"], n=e["note"]) for e in plan["evals"] if e["date"]]
     courses = {c: dict(n=m["name"], s=m["short"], diff=m["diff"], meth=m["method"]) for c, m in plan["courses"].items() if c != "GENEL"}
     data = dict(start=plan["start"], end=plan["end"], courses=courses, evals=evals, weeks=plan["weeks"], phases=plan["phases"], days=days,
-                links={k: [R.LINKS[k][0], R.LINKS[k][1], R.LINKS[k][2]] for k in links_used}, home=R.COURSE_HOME, grade=GRADE,
+                links={k: [R.LINKS[k][0], R.LINKS[k][1], R.LINKS[k][2]] for k in links_used}, home=R.COURSE_HOME, grade=GRADE, lms=R.LMS, syl=SY.as_json(), w0=SY.W0.isoformat(),
                 topics=[dict(id=b["id"], c=b["course"], t=b["title"], u=(R.M.get(b["id"], ([], [], [], ""))[0] or [""])[0]) for b in plan["blocks"].values() if b["kind"] == "L"])
     js = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     tpl = open(TEMPLATE, encoding="utf-8").read()

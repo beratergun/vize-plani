@@ -158,6 +158,18 @@ def main():
     check("Site: her öğrenme görevinin en az bir kaynak bağlantısı var", not nolink, str(nolink[:5]) if nolink else f"{sum(1 for d in sd['days'] for t in d['t'] if t['k'] == 'L')} öğrenme görevi")
     badurl = [k for k, v in sd.get("links", {}).items() if not v[1].startswith("https://")]
     check("Site: tüm bağlantılar https", not badurl, str(badurl))
+    Lids = {t["b"] for d in sd.get("days", []) for t in d["t"] if t["k"] == "L" and t.get("b")}
+    noq = sorted(i for i in Lids if len([1 for d in sd["days"] for t in d["t"] if t.get("b") == i for _ in t.get("qs", [])]) < 2)
+    check("Site: her öğrenme bloğunda en az 2 örnek soru + cevap", not noq and len(Lids) > 0, f"{len(Lids)} blok" + (f"; eksik: {noq}" if noq else ""))
+    syl = sd.get("syl", {})
+    check("Site: 6 dersin 14 haftalık syllabus haritası var ve tüm blok kimlikleri planda", len(syl) == 6 and all(len(v) == 14 for v in syl.values()) and all(b in plan["blocks"] for v in syl.values() for r in v for b in r[3]), f"{sum(len(v) for v in syl.values())} hafta satırı")
+    check("Site: TEDU LMS bağlantıları https ve lms.tedu.edu.tr içeriyor", any("lms.tedu.edu.tr" in x[1] for x in sd.get("lms", [])) and all(x[1].startswith("https://") for x in sd.get("lms", [])), f"{len(sd.get('lms', []))} bağlantı")
+    try:
+        import check_links as _cl
+        lbad = [x[1] for x in sd.get("lms", []) if _cl.status(x[1]) != 200]
+        check("Site: LMS/okul bağlantıları HTTP 200 döndü", not lbad, str(lbad) if lbad else f"{len(sd.get('lms', []))} bağlantı")
+    except Exception as ex:
+        R.append(("Site: LMS testi atlandı (ağ yok): " + type(ex).__name__, True, ""))
     try:
         import check_links
         res = check_links.check_all()

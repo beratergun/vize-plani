@@ -77,6 +77,22 @@ Final sınavları W14 sonrasıdır; tarihleri hiçbir derste duyurulmadığı i�
 | **CMPE453** | Microprocessors (ATmega328P / STM32) | ●●●●○ | Register haritası → bit işlemleri → kod okuma/yazma (kağıt üstünde) → davranış yorumlama |
 | **CMPE499** | Summer Training (rapor + video) | ●●○○○ | Taslak → revizyon → format/kaynakça kontrolü → erken teslim |
 
+## Haftalık konu haritası (syllabus)
+Her dersin 14 haftalık konu akışı (Hafta 1 = 28 Eylül) sitede **Dersler** sekmesinde, `00_Analysis/COURSE_ANALYSIS.md` içinde ve ayrıntılı PDF'in son sayfalarında bulunur. Site ayrıca Bugün sekmesinde "bu hafta derslerde ne işleniyor" kartını gösterir.
+
+| Ders | Haftalık akış (kısa) |
+|---|---|
+| BIO110 | H2 kimya/su/karbon · H3 makromolekül, hücre, zar · H4 metabolizma, solunum, fotosentez · H6 Midterm 1 · H7 hücre döngüsü, Mendel, kalıtım, DNA · H8 gen ifadesi, biyoteknoloji · H9 Midterm 2 · H10 evrim · H11–14 proje sunumları |
+| CMPE371 | H1 giriş · H2 sinüzoidler · H3 özel sinyaller, sistem özellikleri · H4–5 LTI · H6 diferansiyel/fark denklemleri · H7 CTFS · H8 CTFT · H9 Midterm · H10 DTFS · H11 DTFT · H12 filtreleme · H13 örnekleme · H14 Z dönüşümü |
+| CMPE327 | H1–2 temeller, DFA · H3–4 NFA, DFA–NFA denkliği · H5–7 düzenli ifadeler, minimizasyon, Myhill–Nerode · H8 CFG · H9–10 CNF, CYK, pumping · H11–12 PDA, Ogden · H13–14 Turing makineleri |
+| CMPE421 | H1–2 ajanlar · H3–4 arama · H5–6 oyun, CSP · H7 planlama · H8 bilgi gösterimi · H9 belirsizlik · H10 ML temelleri · H11 sinir ağları · H12 NLP/LLM · H13 pekiştirmeli öğrenme · H14 etik |
+| CMPE453 | H1 AVR mimarisi · H2–4 programlama, G/Ç · H5 USART · H6 SPI, I2C · H7 ADC · H8 kesmeler · H9 zamanlayıcılar · H10 PWM · H11–13 ARM Cortex / STM32 |
+
+Her öğrenme bloğunda ayrıca **2 örnek soru ve cevap** (toplam 166) bulunur; sitede cevabı gizli açılır ve "Yanlış yaptım → deftere ekle" ile yanlış defterine kaydolur. Sorular konuya göre yazılmış özgün alıştırmalardır, hocanın soruları değildir.
+
+## Okul bağlantıları (TEDU LMS)
+Sitenin sağ üstündeki **TEDU LMS** düğmesi ve Kaynaklar sekmesindeki "Okul / TEDU LMS" kartı şunlara götürür: [LMS](https://lms.tedu.edu.tr/), [LMS giriş](https://lms.tedu.edu.tr/login/index.php), [MyTEDU](https://my.tedu.edu.tr/), [TED Üniversitesi](https://www.tedu.edu.tr/). Giriş bilgisi bu projede saklanmaz.
+
 ## Nasıl kullanılır?
 1. **Siteyi aç:** https://beratergun.github.io/vize-plani/ — her gün **Bugün** sekmesi o günün görevlerini gösterir.
 2. **Çalış:** Görevde **▶ Başlat** ile sayacı aç, bitince **✓ Yaptım** de. Yapamadığını **✗ Yapmadım** işaretle.

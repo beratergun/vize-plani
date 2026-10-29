@@ -228,3 +228,14 @@ DONE = {
     "V": "Cevabı not ettin; değişiklik varsa plana bildirdin.",
     "T": "Her konuyu bellekten anlatabildin.",
 }
+
+
+# TEDU okul bağlantıları (29 Ekim 2026'da açılış testinden geçti; /my/ giriş sayfasına yönlenir)
+LMS = [
+    ["TEDU LMS ana sayfa", "https://lms.tedu.edu.tr/", "ders slaytları, ödev teslimi, duyurular"],
+    ["LMS giriş", "https://lms.tedu.edu.tr/login/index.php", "TEDUPass ile giriş yap"],
+    ["Derslerim (giriş sonrası)", "https://lms.tedu.edu.tr/my/", "kayıtlı olduğun derslerin listesi"],
+    ["Ders kataloğu (LMS)", "https://lms.tedu.edu.tr/course/index.php", "bölüme göre ders ara"],
+    ["MyTEDU", "https://my.tedu.edu.tr/", "not, ders programı, öğrenci işleri"],
+    ["TED Üniversitesi", "https://www.tedu.edu.tr/", "akademik takvim ve duyurular"],
+]

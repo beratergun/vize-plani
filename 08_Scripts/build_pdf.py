@@ -201,6 +201,10 @@ def build_html(plan, prog):
     for _ in range(9):
         A("<tr class='rm'><td></td><td></td><td></td><td></td><td></td></tr>")
     A("</table><p class='small'>*Konu bilinmiyor · Formül hatası · İşlem hatası · Kavram karışıklığı · Algoritma mantığı hatası · Soruyu yanlış yorumlama · Dikkat hatası</p>")
+    A("<h3>Syllabus haftalık konu haritası (Hafta 1 = 28 Eylül)</h3><p class='small'>Syllabus görsellerinden alındı; hocanın güncel programı değişebilir. Planın gün gün karşılığı yukarıdaki sayfalardadır.</p>")
+    import syllabus as _SY
+    for _c in ["BIO110", "CMPE371", "CMPE327", "CMPE421", "CMPE453", "CMPE499"]:
+        A(f"<h4 style='margin:3px 0 1px;font-size:9pt'>{_c}</h4>" + _SY.html_table(_c, E))
     A("<h3>Notlar</h3><div class='lines'>" + "".join("<div style='border-bottom:.5pt solid #999;height:6mm'></div>" for _ in range(7)) + "</div>")
     return "<!doctype html><html lang='tr'><head><meta charset='utf-8'><title>Akademik Başarı Planı</title><style>" + CSS + "</style></head><body>" + "".join(h) + "</body></html>"
 

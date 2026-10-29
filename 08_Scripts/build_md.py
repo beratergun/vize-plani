@@ -4,6 +4,7 @@ import os
 from datetime import date
 from common import *
 from build_pdf import COURSE_INFO, STATUS_TR
+import syllabus as SY
 
 ORDER = ["BIO110", "CMPE371", "CMPE327", "CMPE421", "CMPE453", "CMPE499"]
 
@@ -89,7 +90,8 @@ def main():
     for c in ORDER:
         m, x = plan["courses"][c], COURSE_INFO[c]
         L += ["", f"## {c} — {m['name']}", "", f"- **Değerlendirme:** {x['eval']}", f"- **Tarihler:** {x['dates']}", f"- **Önkoşullar:** {x['pre']}",
-              f"- **Çalışma yaklaşımı:** {m['method']}", f"- **Riskler:** {x['risk']}", f"- **Syllabus akışı:** {SYLLABUS[c]}"]
+              f"- **Çalışma yaklaşımı:** {m['method']}", f"- **Riskler:** {x['risk']}", f"- **Syllabus akışı:** {SYLLABUS[c]}",
+              "", "**Hafta hafta konu haritası** (Hafta 1 = 28 Eylül):", "", SY.md_table(c)]
     L += ["", "## Örtük tarih/kapsam kararları", "",
           "- BIO110 Midterm 1 kapsamı **B01–B09** (syllabus 5/6 Kas satırına kadar olan konular) varsayıldı; 30 Ekim'de doğrulanır.",
           "- CMPE453 Midterm kapsamı W1–W7 (ADC dahil) varsayıldı; Interrupts (W8) sonrası.",

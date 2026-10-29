@@ -26,16 +26,20 @@
 | 20 | replan (5 Kas, hiçbir şey yapılmamış varsayımı): kapasite aşılmıyor | ✅ GEÇTİ | 101 taşındı, 6 düşürüldü; aşan: yok |
 | 21 | Orijinal planda her dersin öğrenme blokları tanım (önkoşul) sırasında | ✅ GEÇTİ | [] |
 | 22 | replan sonrası da ders içi öğrenme sırası korunuyor (Postponed olanlar hariç) | ✅ GEÇTİ | [] |
-| 23 | PDF: tüm sayfalar A4 ve sayfa sayısı makul (≤30) | ✅ GEÇTİ | 28 sayfa, MediaBox [(b'594.95996', b'841.91998')], 1046 KB |
+| 23 | PDF: tüm sayfalar A4 ve sayfa sayısı makul (≤30) | ✅ GEÇTİ | 30 sayfa, MediaBox [(b'594.95996', b'841.91998')], 1150 KB |
 | 24 | PDF kaynağı: Türkçe karakterler UTF-8 ve tablo taşması CSS'i | ✅ GEÇTİ |  |
 | 25 | Site: veri plan.json ile aynı (gün ve görev sayısı) | ✅ GEÇTİ | 63 gün, 434 görev |
 | 26 | Site: her öğrenme görevinin en az bir kaynak bağlantısı var | ✅ GEÇTİ | 83 öğrenme görevi |
 | 27 | Site: tüm bağlantılar https | ✅ GEÇTİ | [] |
-| 28 | Site: kaynak bağlantılarının hepsi HTTP 200 döndü | ✅ GEÇTİ | 61/61 |
-| 29 | Site: önerilen videoların hepsi YouTube'da doğrulandı (oEmbed) | ✅ GEÇTİ | 138/138 video |
-| 30 | Site: video başlıklarında dil dışı (Hindice vb.) anlatım yok | ✅ GEÇTİ |  |
+| 28 | Site: her öğrenme bloğunda en az 2 örnek soru + cevap | ✅ GEÇTİ | 83 blok |
+| 29 | Site: 6 dersin 14 haftalık syllabus haritası var ve tüm blok kimlikleri planda | ✅ GEÇTİ | 84 hafta satırı |
+| 30 | Site: TEDU LMS bağlantıları https ve lms.tedu.edu.tr içeriyor | ✅ GEÇTİ | 6 bağlantı |
+| 31 | Site: LMS/okul bağlantıları HTTP 200 döndü | ✅ GEÇTİ | 6 bağlantı |
+| 32 | Site: kaynak bağlantılarının hepsi HTTP 200 döndü | ✅ GEÇTİ | 61/61 |
+| 33 | Site: önerilen videoların hepsi YouTube'da doğrulandı (oEmbed) | ✅ GEÇTİ | 138/138 video |
+| 34 | Site: video başlıklarında dil dışı (Hindice vb.) anlatım yok | ✅ GEÇTİ |  |
 
-**Özet:** 30/30 kontrol geçti.
+**Özet:** 34/34 kontrol geçti.
 
 ## Manuel / görsel kontroller (otomatik değil)
 
